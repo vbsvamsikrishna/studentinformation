@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container text-center">
+	<h1>Welcome to Cloud Gen</h1>
+	<h2>New Student</h2>
+	<form action="#" th:action="@{/savestudent}" th:object="${student}" method="POST">
+		
+		<input type=text placeholder="Enter Student name" th:field="*{fname}" class="form-control mb-4 col-4" required>
+
+		<input placeholder="Enter Last name" th:field="*{name}" required class="form-control mb-4 col-4">
+		
+		
+	
+		<select th:field="*{course}" required class="form-control mb-4 col-4">
+		<option value="" selected >Course</option>
+		<option value="AWS">AWS</option>
+		<option value="DEVOPS">DEVOPS</option>
+		<option value="JAVA">JAVA</option>
+		<option value="PYTHON">PYTHON</option>
+		<option value="C">C</option>
+		<option value="MACHINE LEARNING">MACHINE LEARNING</option>
+		<option value="BLOCK CHAIN">BLOCK CHAIN</option>
+		<option value="ARTIFICIAL INTELLIGENCE">ARTIFICIAL INTELLIGENCE</option>
+		<option value="MICRO SERVICES">MICRO SERVICES</option>
+		<option value="DATA SCIENCE">DATA SCIENCE</option>
+		<option value="POWER BI">POWER BI</option>
+		
+		</select>
+	
+		<input placeholder="Enter phone number" th:field="*{phone}" required class="form-control mb-4 col-4">
+	
+	<button type=submit class="btn btn-info col-2">Submit</button>
+	</form>
+</div>
+</body>
+</html>
